@@ -1,0 +1,60 @@
+body {
+  background: $background-color;
+}
+
+#nl-cv {
+  // width: $page-width;
+  // height: $page-height;
+  display: block;
+  margin: 3em auto;
+  //box-sizing: border-box;
+  text-align: left;
+  font-family: $base-font-family;
+  background: $page-color;
+  font-size: $base-font-size;
+  background: $background-color;
+
+  .container {
+    max-width: 1200px;
+    padding: 0;
+    margin: auto;
+  }
+
+  .nl-inner-container {
+    padding: 4em 1em 2em 0.5em;
+    background: $page-color;
+    overflow: hidden;
+    box-shadow: 20px 0px 20px rgba(black, 0.2), -20px 0px 20px rgba(black, 0.1);
+    color: $base-text-color;
+
+    a {
+      color: $base-text-color;
+    }
+
+    li {
+      list-style: none;
+    }
+  }
+}
+
+@media print {
+  body,
+  #nl-cv .nl-inner-container {
+    background: $page-color;
+  }
+
+  #nl-cv .nl-inner-container {
+    font-size: $print-font-size;
+    box-shadow: none;
+  }
+
+  #nl-cv {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: $medium-screen) {
+  #nl-cv {
+    margin: 0 auto;
+  }
+}
