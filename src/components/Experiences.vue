@@ -1,34 +1,29 @@
 <template>
-  <ul class="nl-experience-list" v-if="items">
-    <ExperienceItem v-for="(item, key) in sortedItems" :item="item" :key="key"/>
+  <ul class="nl-experience-list" v-if="professionalExperiences">
+    <ExperienceItem v-for="(item, key) in sortedItems" :item="item" :displayDetails="config.displayProfessionalExperienceDetails" :key="key"/>
   </ul>
 </template>
 
 <script>
-import { professionalExperiences } from "../assets/data/professional-experiences";
 import ExperienceItem from "./ExperienceItem";
 
 export default {
   name: "Experiences",
+  props: ["professionalExperiences", "config"],
   components: {
     ExperienceItem
   },
   computed: {
     sortedItems() {
-      return Object.keys(this.items)
+      return Object.keys(this.professionalExperiences)
         .map(t => {
-          this.$set(this.items[t], "key", t);
-          return this.items[t];
+          this.$set(this.professionalExperiences[t], "key", t);
+          return this.professionalExperiences[t];
         })
         .sort(function(a, b) {
           return b.endDate - a.endDate;
         });
     }
-  },
-  data() {
-    return {
-      items: professionalExperiences
-    };
   }
 };
 </script>

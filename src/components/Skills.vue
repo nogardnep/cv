@@ -1,36 +1,31 @@
 <template>
   <div class="row">
-    <div class="col-md-12">
-      <SkillItem :item="skills.frontend" :system-name="'frontend'" />
-    </div>
-    <div class="col-md-12">
-      <SkillItem :item="skills.backend" :system-name="'backend'" />
-    </div>
-    <div class="col-md-12">
-      <SkillItem :item="skills.tools" :system-name="'tools'" />
-    </div>
-    <div class="col-md-12">
-      <SkillItem :item="skills.infographics" :system-name="'infographics'" />
-    </div>
-    <div class="col-md-12">
-      <SkillItem :item="skills.languages" :system-name="'languages'" />
-    </div>
+      <div :class="col" v-for="(skill, key) in skills" :key="key">
+        <SkillItem :item="skill" />
+      </div>
   </div>
 </template>
 
 <script>
-import { skills } from "../assets/data/skills";
 import SkillItem from "./SkillItem";
 
 export default {
   name: "Skills",
+  props: ["skills"],
+  computed: {
+    col: function(item) {
+      const maxSkillsByRow = 3; 
+      let skillsByRow = this.skills.length;
+      if (skillsByRow > maxSkillsByRow) {
+        skillsByRow = maxSkillsByRow;
+      }
+      let colSize = Math.round(12 / skillsByRow);
+      
+      return "col-md-" + colSize;
+    }
+  },
   components: {
     SkillItem
-  },
-  data() {
-    return {
-      skills: skills
-    };
   }
 };
 </script>

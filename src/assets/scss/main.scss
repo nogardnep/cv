@@ -1,15 +1,9 @@
-@import "config/variables";
-@import "config/mixins";
+@import "global/global";
 
-@import "content/page";
-@import "content/header";
-@import "content/education-experiences";
-@import "content/hobbies";
-@import "content/skills";
+.nl-cv-type-polyvalent {
+    @import "polyvalent/polyvalent";
+}
 
-
-// @page {
-//     size: 21cm 29.7cm;
-//     margin: 30mm 45mm 30mm 45mm;
-//      /* change the margins as you want them to be. */
-// }
+.nl-cv-type-web {
+    @import "web/web";
+}

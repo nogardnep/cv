@@ -1,0 +1,28 @@
+$page-color: rgb(255, 255, 255);
+$base-text-color: rgb(0, 0, 0);
+$title-color: rgb(255, 255, 255);
+$header-color: rgb(19, 116, 129);
+$special-color: rgb(184, 4, 160);
+$special-color-2: $special-color;
+$special-color-3: $special-color;
+$special-background-color: $special-color;
+$special-background-color-2: $special-color;
+$special-background-color-3: $special-color;
+$strip-background-color: rgb(129, 129, 129);
+$background-color: rgb(190, 190, 190);
+
+$base-font-family: Verdana, Geneva, Tahoma, sans-serif;
+$special-font-family: "Lucida Console", Monaco, monospace;
+
+$base-font-size: 18px;
+$print-font-size: $base-font-size;
+
+$small-screen: 576px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$extra-large-screen: 1200px;
+
+$page-width: 827px;
+$page-height: 1170px;
+
+$images-path: "../images";

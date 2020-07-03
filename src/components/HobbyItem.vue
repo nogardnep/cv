@@ -7,7 +7,7 @@
       <div class="col-md-12">
         <ul class="nl-details-list" v-if="item.details">
           <li class="nl-detail-item" v-for="(detail, key) in item.details" :key="key">
-            <h4 v-html="detail.text"></h4>
+            <span v-html="detail.text"></span>
             <ul class="nl-subdetails-list" v-if="detail.details">
               <li class="nl-subdetail-item" v-for="(subdetail, key) in detail.details" :key="key">
                 <span v-html="subdetail.text"></span>

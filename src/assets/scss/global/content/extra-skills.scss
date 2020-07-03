@@ -1,0 +1,68 @@
+.nl-extra-skills {
+    margin: 2em 0 0;
+    
+    h3 {
+        font-size: 1em;
+        font-weight: bold;
+        color: $special-color;
+        margin: 0 0 5px;
+    }
+
+    .nl-details-list {
+        padding: 0 0 0 10px;
+
+        .nl-detail-item {
+            font-size: 0.95em;
+            line-height: 1em;
+            margin: 0 0 0.6em;
+            position: relative;
+            color: black;
+
+            // &:before {
+            //     content: "›";
+            //     position: absolute;
+            //     display: inline-block;
+            //     left: -10px;
+            //     top: 0;
+            //     color: $special-color;
+            //     font-weight: bold;
+            // }
+
+            &:before {
+                content: "";
+                width: 5px;
+                height: 5px;
+                position: absolute;
+                left: -10px;
+                top: 6px;
+                //margin: 0 10px 0.1em 10px;
+                display: inline-block;
+                background: $special-color;
+            }
+
+            .nl-subdetails-list {
+                padding: 5px 0 0 10px;
+
+                .nl-subdetail-item {
+                    position: relative;
+                    font-size: 0.9em;
+                    margin: 0 0 2px;
+                    font-style: italic;
+                    olor: gray;
+
+                    // &:before {
+                    //     //content: "";
+                    //     width: 5px;
+                    //     height: 5px;
+                    //     position: absolute;
+                    //     left: -10px;
+                    //     top: 6px;
+                    //     //margin: 0 10px 0.1em 10px;
+                    //     display: inline-block;
+                    //     background: $special-color;
+                    // }
+                }
+            }
+        }
+    }
+}

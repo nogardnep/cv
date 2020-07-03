@@ -3,7 +3,7 @@ body {
   background: #bebebe;
 }
 
-#nl-cv {
+.nl-outer-container {
   display: block;
   margin: 3em auto;
   text-align: left;
@@ -12,350 +12,343 @@ body {
   font-size: 18px;
   background: #bebebe;
 }
-#nl-cv .container {
+.nl-outer-container .no-padding {
+  padding: 0;
+}
+.nl-outer-container .container {
   max-width: 1200px;
   padding: 0;
   margin: auto;
 }
-#nl-cv .nl-inner-container {
-  padding: 4em 1em 2em 0.5em;
+.nl-outer-container .nl-inner-container {
+  padding: 2em 50px;
   background: white;
   overflow: hidden;
   box-shadow: 20px 0px 20px rgba(0, 0, 0, 0.2), -20px 0px 20px rgba(0, 0, 0, 0.1);
   color: black;
 }
-#nl-cv .nl-inner-container a {
+.nl-outer-container .nl-inner-container a {
   color: black;
 }
-#nl-cv .nl-inner-container li {
+.nl-outer-container .nl-inner-container li {
   list-style: none;
 }
 
 @media print {
   body,
-#nl-cv .nl-inner-container {
+.nl-outer-container .nl-inner-container {
     background: white;
   }
 
-  #nl-cv .nl-inner-container {
+  .nl-outer-container .nl-inner-container {
     font-size: 18px;
     box-shadow: none;
   }
 
-  #nl-cv {
+  .nl-outer-container {
     margin: 0 auto;
   }
 }
 @media (max-width: 768px) {
-  #nl-cv {
+  .nl-outer-container {
     margin: 0 auto;
   }
 }
-#nl-cv .nl-page-header {
-  margin: 0 0 3em;
+.nl-page-header {
+  margin: 0;
 }
-#nl-cv .nl-page-header .nl-portrait-figure {
-  max-width: 170px;
+.nl-page-header .nl-portrait-figure {
+  max-width: 200px;
   margin: 0 auto;
 }
-#nl-cv .nl-page-header .nl-portrait-figure:after {
-  content: "";
-  z-index: 1;
-  position: absolute;
-  top: -20px;
-  bottom: 50px;
-  left: 90px;
-  right: 100px;
-  transform: rotate(0deg);
-  filter: blur(2px);
-  background: rgba(19, 116, 129, 0.4);
-}
-#nl-cv .nl-page-header .nl-portrait-figure img {
+.nl-page-header .nl-portrait-figure img {
   max-width: 100%;
   max-height: 180px;
   position: relative;
   z-index: 2;
-  box-shadow: 5px 5px 10px rgba(0, 138, 156, 0.3);
   filter: saturate(0);
 }
-#nl-cv .nl-page-header .nl-cv-title {
-  font-family: "Lucida Console", Monaco, monospace;
-  font-stretch: 50%;
-  font-size: 2.4em;
-  text-align: right;
-  line-height: 1.2em;
-  color: rgba(219, 171, 13, 0.5);
-  filter: blur(1px);
-  text-shadow: 0px 0px 6px rgba(219, 171, 13, 0.3);
-  transform: translate(-150px, 50px);
+.nl-page-header .nl-portrait-figure img:after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: 10px;
+  right: 10px;
+  border-radius: 50px 0 0px 0px;
+  background: linear-gradient(170deg, rgba(184, 4, 160, 0.02) 0%, rgba(184, 4, 160, 0.05) 50%, transparent 80%);
+  filter: blur(5px);
 }
-#nl-cv .nl-page-header .nl-cv-title:before {
-  content: "{ ";
+.nl-page-header .nl-portrait-figure:after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: -20px;
+  bottom: 0px;
+  left: -20px;
+  right: 25px;
+  border-radius: 50px 0 0px 0px;
+  background: linear-gradient(170deg, rgba(184, 4, 160, 0.02) 0%, rgba(184, 4, 160, 0.05) 50%, transparent 80%);
+  filter: blur(5px);
 }
-#nl-cv .nl-page-header .nl-cv-title:after {
-  content: " }";
-}
-#nl-cv .nl-page-header .nl-owner-name {
+.nl-page-header .nl-cv-title-container {
   position: relative;
-  font-size: 1.5em;
-  letter-spacing: 8px;
-  margin: 0 0 0.8em;
+}
+.nl-page-header .nl-cv-title-container .nl-cv-title {
+  font-size: 2.2em;
+  margin: 0 0 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+.nl-page-header .nl-cv-title-container .nl-cv-title .nl-insersion {
+  font-size: 0.6em;
+  display: block;
+  margin: 0;
+  padding: 0 5px;
+  line-height: 1.1em;
   color: white;
-  transform: translate(-210px, 5px);
-  line-height: 1em;
-  padding: 2px 5px 0;
-  display: inline-block;
+  background: #b804a0;
+}
+.nl-page-header .nl-cv-title-container .nl-cv-title .nl-main-title {
+  color: #b804a0;
+  display: block;
+}
+.nl-page-header .nl-owner-name {
+  max-width: 250px;
   position: relative;
+  font-size: 2.2em;
+  line-height: 0.9em;
+  letter-spacing: 1px;
+  margin: 0 0 0.5em;
+  color: black;
+  filter: blur(0.5px);
+  padding: 2px 0 0;
+  display: inline-block;
   z-index: 2;
 }
-#nl-cv .nl-page-header .nl-owner-name:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: inherit;
-  z-index: -1;
-  background: rgba(19, 116, 129, 0.8);
-  filter: blur(1px);
-}
-#nl-cv .nl-page-header .nl-civil-status {
+.nl-page-header .nl-civil-status {
   font-size: 0.95em;
   line-height: 1.3em;
-  color: #137481;
+  color: black;
 }
-#nl-cv .nl-page-header .nl-civil-status address {
+.nl-page-header .nl-civil-status address {
   margin: 0 0 0.5em;
 }
-#nl-cv .nl-page-header .nl-civil-status address .nl-email a {
+.nl-page-header .nl-civil-status address .nl-email a {
   color: inherit;
   font-weight: bold;
   font-style: italic;
 }
-#nl-cv .nl-page-header .nl-civil-status .nl-driving-licence {
-  margin: 0 0 1.5em;
+.nl-page-header .nl-civil-status .nl-driving-licence {
+  margin: 0 0 0.5em;
   text-transform: uppercase;
 }
-#nl-cv .nl-page-header .nl-civil-status .nl-website {
+.nl-page-header .nl-civil-status .nl-website {
   font-style: italic;
   font-weight: bold;
   font-size: 1.2em;
 }
-#nl-cv .nl-page-header .nl-civil-status .nl-website .nl-label {
-  color: rgba(219, 171, 13, 0.5);
+.nl-page-header .nl-civil-status .nl-website .nl-label {
+  color: #b804a0;
+  letter-spacing: 1px;
 }
-#nl-cv .nl-page-header .nl-civil-status .nl-website .nl-link {
-  margin: 0 0 0 1em;
+.nl-page-header .nl-civil-status .nl-website .nl-link {
+  display: inline-block;
+  margin: 5px 0 0;
   opacity: 1;
   font-weight: normal;
   font-style: normal;
   font-size: 1em;
   text-decoration: underline;
-  color: #008a9c;
-  letter-spacing: 4px;
+  color: black;
+  letter-spacing: 3px;
 }
 @media (max-width: 768px) {
-  #nl-cv .nl-page-header .nl-cv-title {
+  .nl-page-header .nl-cv-title {
     transform: none;
     margin: 2em 0 0;
     text-align: center;
   }
-  #nl-cv .nl-page-header .nl-owner-name {
+  .nl-page-header .nl-owner-name {
     transform: none;
     margin: 2em 0 0.5em;
   }
-  #nl-cv .nl-page-header .nl-civil-status .nl-website .nl-link {
+  .nl-page-header .nl-civil-status .nl-website .nl-link {
     margin-left: 0;
   }
 }
 
-#nl-cv .nl-professional-experiences h2,
-#nl-cv .nl-education h2 {
-  color: white;
-  font-weight: normal;
+.nl-professional-experiences h2,
+.nl-education h2 {
+  font-size: 2.2em;
+  color: #b804a0;
   font-style: italic;
-  padding: 2px 2px 0;
-  position: relative;
-  z-index: 1;
-  letter-spacing: 5px;
-  font-family: "Lucida Console", Monaco, monospace;
+  margin: 0 0 0.5em;
+  line-height: 0.9em;
 }
-#nl-cv .nl-professional-experiences h2:before,
-#nl-cv .nl-education h2:before {
-  content: "";
-  position: absolute;
-  top: 0.1em;
-  bottom: 0.2em;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  background: #dbab0d;
-  display: block;
-  filter: blur(1px);
-}
-#nl-cv .nl-professional-experiences .nl-experience-list,
-#nl-cv .nl-professional-experiences .nl-education-list,
-#nl-cv .nl-education .nl-experience-list,
-#nl-cv .nl-education .nl-education-list {
+.nl-professional-experiences .nl-experience-list,
+.nl-professional-experiences .nl-education-list,
+.nl-education .nl-experience-list,
+.nl-education .nl-education-list {
   padding: 0;
-  margin: 0 0 5em;
+  margin: 0 0 0;
 }
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-education-item,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-experience-item,
-#nl-cv .nl-education .nl-experience-list .nl-education-item,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item,
-#nl-cv .nl-education .nl-education-list .nl-education-item,
-#nl-cv .nl-education .nl-education-list .nl-experience-item {
+.nl-professional-experiences .nl-experience-list .nl-education-item,
+.nl-professional-experiences .nl-experience-list .nl-experience-item,
+.nl-professional-experiences .nl-education-list .nl-education-item,
+.nl-professional-experiences .nl-education-list .nl-experience-item,
+.nl-education .nl-experience-list .nl-education-item,
+.nl-education .nl-experience-list .nl-experience-item,
+.nl-education .nl-education-list .nl-education-item,
+.nl-education .nl-education-list .nl-experience-item {
   position: relative;
-  margin: 0 0 1em;
+  margin: 0 0 10px;
   line-height: 1.1em;
-  color: #008a9c;
+  color: black;
 }
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-education-item .nl-date,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-date,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-date,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-experience-item .nl-date,
-#nl-cv .nl-education .nl-experience-list .nl-education-item .nl-date,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-date,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-date,
-#nl-cv .nl-education .nl-education-list .nl-experience-item .nl-date {
+.nl-professional-experiences .nl-experience-list .nl-education-item .nl-date,
+.nl-professional-experiences .nl-experience-list .nl-experience-item .nl-date,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-date,
+.nl-professional-experiences .nl-education-list .nl-experience-item .nl-date,
+.nl-education .nl-experience-list .nl-education-item .nl-date,
+.nl-education .nl-experience-list .nl-experience-item .nl-date,
+.nl-education .nl-education-list .nl-education-item .nl-date,
+.nl-education .nl-education-list .nl-experience-item .nl-date {
   font-weight: lighter;
   font-size: 0.9em;
-  margin: 0 0 0.2em;
+  margin: 0 0 2px;
   color: white;
-  background: #008a9c;
+  background: #b804a0;
   display: inline-block;
   padding: 0 1px;
 }
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-education-item h3,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item h3,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item h3,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-experience-item h3,
-#nl-cv .nl-education .nl-experience-list .nl-education-item h3,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item h3,
-#nl-cv .nl-education .nl-education-list .nl-education-item h3,
-#nl-cv .nl-education .nl-education-list .nl-experience-item h3 {
+.nl-professional-experiences .nl-experience-list .nl-education-item h3,
+.nl-professional-experiences .nl-experience-list .nl-experience-item h3,
+.nl-professional-experiences .nl-education-list .nl-education-item h3,
+.nl-professional-experiences .nl-education-list .nl-experience-item h3,
+.nl-education .nl-experience-list .nl-education-item h3,
+.nl-education .nl-experience-list .nl-experience-item h3,
+.nl-education .nl-education-list .nl-education-item h3,
+.nl-education .nl-education-list .nl-experience-item h3 {
   font-size: 0.9em;
   font-weight: bold;
   margin: 0 0 0.5em;
 }
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-education-item .nl-details-list,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-details-list,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-details-list,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-experience-item .nl-details-list,
-#nl-cv .nl-education .nl-experience-list .nl-education-item .nl-details-list,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-details-list,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-details-list,
-#nl-cv .nl-education .nl-education-list .nl-experience-item .nl-details-list {
+.nl-professional-experiences .nl-experience-list .nl-education-item .nl-details-list,
+.nl-professional-experiences .nl-experience-list .nl-experience-item .nl-details-list,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-details-list,
+.nl-professional-experiences .nl-education-list .nl-experience-item .nl-details-list,
+.nl-education .nl-experience-list .nl-education-item .nl-details-list,
+.nl-education .nl-experience-list .nl-experience-item .nl-details-list,
+.nl-education .nl-education-list .nl-education-item .nl-details-list,
+.nl-education .nl-education-list .nl-experience-item .nl-details-list {
   padding: 0;
   font-style: italic;
 }
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-education-item .nl-details-list .nl-detail-item,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-details-list .nl-detail-item,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-details-list .nl-detail-item,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-experience-item .nl-details-list .nl-detail-item,
-#nl-cv .nl-education .nl-experience-list .nl-education-item .nl-details-list .nl-detail-item,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-details-list .nl-detail-item,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-details-list .nl-detail-item,
-#nl-cv .nl-education .nl-education-list .nl-experience-item .nl-details-list .nl-detail-item {
+.nl-professional-experiences .nl-experience-list .nl-education-item .nl-details-list .nl-detail-item,
+.nl-professional-experiences .nl-experience-list .nl-experience-item .nl-details-list .nl-detail-item,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-details-list .nl-detail-item,
+.nl-professional-experiences .nl-education-list .nl-experience-item .nl-details-list .nl-detail-item,
+.nl-education .nl-experience-list .nl-education-item .nl-details-list .nl-detail-item,
+.nl-education .nl-experience-list .nl-experience-item .nl-details-list .nl-detail-item,
+.nl-education .nl-education-list .nl-education-item .nl-details-list .nl-detail-item,
+.nl-education .nl-education-list .nl-experience-item .nl-details-list .nl-detail-item {
   margin: 0 0 5px;
   font-size: 0.9em;
 }
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-education-item .nl-location,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-education-item .nl-school,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-education-item .nl-company,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-location,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-school,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-company,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-location,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-school,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-company,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-experience-item .nl-location,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-experience-item .nl-school,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-experience-item .nl-company,
-#nl-cv .nl-education .nl-experience-list .nl-education-item .nl-location,
-#nl-cv .nl-education .nl-experience-list .nl-education-item .nl-school,
-#nl-cv .nl-education .nl-experience-list .nl-education-item .nl-company,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-location,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-school,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-company,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-location,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-school,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-company,
-#nl-cv .nl-education .nl-education-list .nl-experience-item .nl-location,
-#nl-cv .nl-education .nl-education-list .nl-experience-item .nl-school,
-#nl-cv .nl-education .nl-education-list .nl-experience-item .nl-company {
-  color: #008a9c;
+.nl-professional-experiences .nl-experience-list .nl-education-item .nl-location,
+.nl-professional-experiences .nl-experience-list .nl-education-item .nl-school,
+.nl-professional-experiences .nl-experience-list .nl-education-item .nl-company,
+.nl-professional-experiences .nl-experience-list .nl-experience-item .nl-location,
+.nl-professional-experiences .nl-experience-list .nl-experience-item .nl-school,
+.nl-professional-experiences .nl-experience-list .nl-experience-item .nl-company,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-location,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-school,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-company,
+.nl-professional-experiences .nl-education-list .nl-experience-item .nl-location,
+.nl-professional-experiences .nl-education-list .nl-experience-item .nl-school,
+.nl-professional-experiences .nl-education-list .nl-experience-item .nl-company,
+.nl-education .nl-experience-list .nl-education-item .nl-location,
+.nl-education .nl-experience-list .nl-education-item .nl-school,
+.nl-education .nl-experience-list .nl-education-item .nl-company,
+.nl-education .nl-experience-list .nl-experience-item .nl-location,
+.nl-education .nl-experience-list .nl-experience-item .nl-school,
+.nl-education .nl-experience-list .nl-experience-item .nl-company,
+.nl-education .nl-education-list .nl-education-item .nl-location,
+.nl-education .nl-education-list .nl-education-item .nl-school,
+.nl-education .nl-education-list .nl-education-item .nl-company,
+.nl-education .nl-education-list .nl-experience-item .nl-location,
+.nl-education .nl-education-list .nl-experience-item .nl-school,
+.nl-education .nl-education-list .nl-experience-item .nl-company {
+  color: black;
   font-size: 0.9em;
   font-style: italic;
 }
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-education-item .nl-location,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-location,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-location,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-experience-item .nl-location,
-#nl-cv .nl-education .nl-experience-list .nl-education-item .nl-location,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-location,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-location,
-#nl-cv .nl-education .nl-education-list .nl-experience-item .nl-location {
+.nl-professional-experiences .nl-experience-list .nl-education-item .nl-location,
+.nl-professional-experiences .nl-experience-list .nl-experience-item .nl-location,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-location,
+.nl-professional-experiences .nl-education-list .nl-experience-item .nl-location,
+.nl-education .nl-experience-list .nl-education-item .nl-location,
+.nl-education .nl-experience-list .nl-experience-item .nl-location,
+.nl-education .nl-education-list .nl-education-item .nl-location,
+.nl-education .nl-education-list .nl-experience-item .nl-location {
   font-size: 0.8em;
-  margin: 0.5em 0 0;
+  margin: 0;
 }
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-education-item .nl-location:before,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-location:before,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-location:before,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-experience-item .nl-location:before,
-#nl-cv .nl-education .nl-experience-list .nl-education-item .nl-location:before,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-location:before,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-location:before,
-#nl-cv .nl-education .nl-education-list .nl-experience-item .nl-location:before {
+.nl-professional-experiences .nl-experience-list .nl-education-item .nl-location:before,
+.nl-professional-experiences .nl-experience-list .nl-experience-item .nl-location:before,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-location:before,
+.nl-professional-experiences .nl-education-list .nl-experience-item .nl-location:before,
+.nl-education .nl-experience-list .nl-education-item .nl-location:before,
+.nl-education .nl-experience-list .nl-experience-item .nl-location:before,
+.nl-education .nl-education-list .nl-education-item .nl-location:before,
+.nl-education .nl-education-list .nl-experience-item .nl-location:before {
   content: "(";
 }
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-education-item .nl-location:after,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-location:after,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-location:after,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-experience-item .nl-location:after,
-#nl-cv .nl-education .nl-experience-list .nl-education-item .nl-location:after,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-location:after,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-location:after,
-#nl-cv .nl-education .nl-education-list .nl-experience-item .nl-location:after {
+.nl-professional-experiences .nl-experience-list .nl-education-item .nl-location:after,
+.nl-professional-experiences .nl-experience-list .nl-experience-item .nl-location:after,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-location:after,
+.nl-professional-experiences .nl-education-list .nl-experience-item .nl-location:after,
+.nl-education .nl-experience-list .nl-education-item .nl-location:after,
+.nl-education .nl-experience-list .nl-experience-item .nl-location:after,
+.nl-education .nl-education-list .nl-education-item .nl-location:after,
+.nl-education .nl-education-list .nl-experience-item .nl-location:after {
   content: ")";
 }
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item h3,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item h3 {
-  font-size: 1.2em;
+.nl-professional-experiences .nl-experience-list .nl-experience-item h3,
+.nl-education .nl-experience-list .nl-experience-item h3 {
+  font-size: 1em;
 }
 @media (max-width: 576px) {
-  #nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-details-list,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-details-list,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-details-list,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-details-list {
+  .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-details-list,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-details-list,
+.nl-education .nl-experience-list .nl-experience-item .nl-details-list,
+.nl-education .nl-education-list .nl-education-item .nl-details-list {
     margin: 0 0 1.5em;
   }
-  #nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-location,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-school,
-#nl-cv .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-company,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-location,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-school,
-#nl-cv .nl-professional-experiences .nl-education-list .nl-education-item .nl-company,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-location,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-school,
-#nl-cv .nl-education .nl-experience-list .nl-experience-item .nl-company,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-location,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-school,
-#nl-cv .nl-education .nl-education-list .nl-education-item .nl-company {
+  .nl-professional-experiences .nl-experience-list .nl-experience-item .nl-location,
+.nl-professional-experiences .nl-experience-list .nl-experience-item .nl-school,
+.nl-professional-experiences .nl-experience-list .nl-experience-item .nl-company,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-location,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-school,
+.nl-professional-experiences .nl-education-list .nl-education-item .nl-company,
+.nl-education .nl-experience-list .nl-experience-item .nl-location,
+.nl-education .nl-experience-list .nl-experience-item .nl-school,
+.nl-education .nl-experience-list .nl-experience-item .nl-company,
+.nl-education .nl-education-list .nl-education-item .nl-location,
+.nl-education .nl-education-list .nl-education-item .nl-school,
+.nl-education .nl-education-list .nl-education-item .nl-company {
     font-size: 0.8em;
     margin: 0 0 1em;
   }
 }
 
-#nl-cv .nl-hobbies {
+.nl-hobbies {
   position: relative;
-  margin: 6em 0 0;
+  margin: 5em 0 0;
 }
-#nl-cv .nl-hobbies:after {
+.nl-hobbies:after {
   content: "";
   z-index: 1;
   position: absolute;
@@ -364,162 +357,160 @@ body {
   left: 10px;
   right: 10px;
   border-radius: 50px 0 0px 0px;
-  background: linear-gradient(170deg, rgba(124, 219, 231, 0.05) 0%, rgba(124, 219, 231, 0.2) 50%, transparent 80%);
+  background: linear-gradient(170deg, rgba(184, 4, 160, 0.02) 0%, rgba(184, 4, 160, 0.05) 50%, transparent 80%);
   filter: blur(5px);
 }
-#nl-cv .nl-hobbies h2 {
+.nl-hobbies h2 {
   line-height: 1em;
-  font-size: 1.8em;
+  font-size: 1.6em;
   margin: 0 0 0.5em;
   letter-spacing: 3px;
-  color: #41bccc;
+  color: #b804a0;
   font-style: italic;
-  filter: blur(1px);
-  text-shadow: 0px 3px 0px rgba(65, 188, 204, 0.3), 0px 14px 10px rgba(0, 0, 0, 0.15), 0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
 }
-#nl-cv .nl-hobbies .nl-hobby-item {
+.nl-hobbies .nl-hobby-item {
   line-height: 1.1em;
 }
-#nl-cv .nl-hobbies .nl-hobby-item h3 {
+.nl-hobbies .nl-hobby-item h3 {
   font-size: 0.9em;
   font-weight: bold;
   margin: 0 0 0.2em;
-  color: #41bccc;
+  color: #b804a0;
 }
-#nl-cv .nl-hobbies .nl-hobby-item h3:before {
-  content: "> ";
-  font-size: 0.8em;
+.nl-hobbies .nl-hobby-item h3:before {
+  content: "› ";
+  font-size: 1em;
+  font-weight: bold;
 }
-#nl-cv .nl-hobbies .nl-hobby-item .nl-details-list {
+.nl-hobbies .nl-hobby-item .nl-details-list {
   padding: 0 0 0 1em;
 }
-#nl-cv .nl-hobbies .nl-hobby-item .nl-details-list .nl-detail-item h4 {
+.nl-hobbies .nl-hobby-item .nl-details-list .nl-detail-item h4 {
   font-size: 0.9em;
   margin: 0 0 0.2em;
   font-style: italic;
 }
 
-#nl-cv .nl-skills {
-  margin: 3em 0 0;
+.nl-skills {
+  margin: -20px 0 2em;
 }
-#nl-cv .nl-skills h2 {
+.nl-skills h2 {
   text-align: center;
-  margin: 0 0 1em;
-  font-size: 2em;
-  color: #41bccc;
+  font-size: 2.2em;
+  color: #b804a0;
   font-style: italic;
-  filter: blur(1px);
+  margin: 0 0 0.5em;
 }
-#nl-cv .nl-skills .nl-skill-item {
+.nl-skills .nl-skill-item {
   line-height: 1.1em;
   margin: 0 0 1em;
   text-align: center;
 }
-#nl-cv .nl-skills .nl-skill-item h3 {
+.nl-skills .nl-skill-item h3 {
   font-size: 1.1em;
   padding: 0;
   margin: 0 0 0.5em;
   text-transform: uppercase;
   font-weight: bold;
-  color: #41bccc;
+  color: rgba(184, 4, 160, 0.8);
 }
-#nl-cv .nl-skills .nl-skill-item .nl-details-list {
+.nl-skills .nl-skill-item .nl-details-list {
   padding: 0;
   position: relative;
 }
-#nl-cv .nl-skills .nl-skill-item .nl-details-list .nl-detail-item {
+.nl-skills .nl-skill-item .nl-details-list .nl-detail-item {
   padding: 0;
   margin: 0 0 0.6em;
 }
-#nl-cv .nl-skills .nl-skill-item .nl-details-list .nl-detail-item h4 {
+.nl-skills .nl-skill-item .nl-details-list .nl-detail-item h4 {
   font-size: 1em;
   margin: 0;
 }
-#nl-cv .nl-skills .nl-skill-item .nl-details-list .nl-detail-item .nl-subdetails-list {
+.nl-skills .nl-skill-item .nl-details-list .nl-detail-item .nl-subdetails-list {
   padding: 0;
   margin: 0;
 }
-#nl-cv .nl-skills .nl-skill-item .nl-details-list .nl-detail-item .nl-subdetails-list .nl-subdetail-item {
+.nl-skills .nl-skill-item .nl-details-list .nl-detail-item .nl-subdetails-list .nl-subdetail-item {
   font-style: italic;
   position: relative;
   font-size: 0.8em;
 }
-#nl-cv .nl-skills .nl-frontend-skill-item .nl-details-list .nl-detail-item h4,
-#nl-cv .nl-skills .nl-backend-skill-item .nl-details-list .nl-detail-item h4 {
+.nl-skills .nl-frontend-skill-item .nl-details-list .nl-detail-item h4,
+.nl-skills .nl-backend-skill-item .nl-details-list .nl-detail-item h4 {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.3);
   text-align: right;
 }
-#nl-cv .nl-skills .nl-frontend-skill-item .nl-details-list .nl-detail-item .nl-subdetails-list .nl-subdetail-item,
-#nl-cv .nl-skills .nl-backend-skill-item .nl-details-list .nl-detail-item .nl-subdetails-list .nl-subdetail-item {
+.nl-skills .nl-frontend-skill-item .nl-details-list .nl-detail-item .nl-subdetails-list .nl-subdetail-item,
+.nl-skills .nl-backend-skill-item .nl-details-list .nl-detail-item .nl-subdetails-list .nl-subdetail-item {
   text-align: left;
   list-style: square;
 }
-#nl-cv .nl-skills .nl-tools-skill-item .nl-details-list .nl-detail-item {
+.nl-skills .nl-tools-skill-item .nl-details-list .nl-detail-item {
   font-style: italic;
   font-size: 0.9em;
   margin: 0 0 0.2em;
 }
-#nl-cv .nl-skills .nl-infographics-skill-item .nl-details-list .nl-detail-item {
+.nl-skills .nl-infographics-skill-item .nl-details-list .nl-detail-item {
   display: inline-block;
   margin: 0 1em 0.5em 0;
 }
-#nl-cv .nl-skills .nl-infographics-skill-item .nl-details-list .nl-detail-item:last-child {
+.nl-skills .nl-infographics-skill-item .nl-details-list .nl-detail-item:last-child {
   margin-right: 0;
 }
-#nl-cv .nl-skills .nl-infographics-skill-item .nl-details-list .nl-detail-item h4 {
+.nl-skills .nl-infographics-skill-item .nl-details-list .nl-detail-item h4 {
   font-size: 0.9em;
 }
-#nl-cv .nl-skills .nl-languages-skill-item:before {
+.nl-skills .nl-languages-skill-item:before {
   content: "*";
   display: inline-block;
   margin: 0 0 1em;
 }
-#nl-cv .nl-skills .nl-languages-skill-item h3 {
-  color: #dbab0d;
+.nl-skills .nl-languages-skill-item h3 {
+  color: #b804a0;
   text-transform: none;
   font-size: 1.3em;
   font-style: italic;
 }
-#nl-cv .nl-skills .nl-languages-skill-item .nl-details-list .nl-detail-item {
+.nl-skills .nl-languages-skill-item .nl-details-list .nl-detail-item {
   font-style: italic;
 }
-#nl-cv .nl-skills .nl-languages-skill-item .nl-details-list .nl-detail-item h4 {
+.nl-skills .nl-languages-skill-item .nl-details-list .nl-detail-item h4 {
   font-size: 0.9em;
   font-weight: bold;
 }
-#nl-cv .nl-skills .nl-frontend-skill-item,
-#nl-cv .nl-skills .nl-backend-skill-item,
-#nl-cv .nl-skills .nl-tools-skill-item,
-#nl-cv .nl-skills .nl-infographics-skill-item {
+.nl-skills .nl-frontend-skill-item,
+.nl-skills .nl-backend-skill-item,
+.nl-skills .nl-tools-skill-item,
+.nl-skills .nl-infographics-skill-item {
   padding: 0.5em 0;
   position: relative;
 }
-#nl-cv .nl-skills .nl-frontend-skill-item h3:before,
-#nl-cv .nl-skills .nl-backend-skill-item h3:before,
-#nl-cv .nl-skills .nl-tools-skill-item h3:before,
-#nl-cv .nl-skills .nl-infographics-skill-item h3:before {
+.nl-skills .nl-frontend-skill-item h3:before,
+.nl-skills .nl-backend-skill-item h3:before,
+.nl-skills .nl-tools-skill-item h3:before,
+.nl-skills .nl-infographics-skill-item h3:before {
   content: "/ ";
 }
-#nl-cv .nl-skills .nl-frontend-skill-item h3:after,
-#nl-cv .nl-skills .nl-backend-skill-item h3:after,
-#nl-cv .nl-skills .nl-tools-skill-item h3:after,
-#nl-cv .nl-skills .nl-infographics-skill-item h3:after {
+.nl-skills .nl-frontend-skill-item h3:after,
+.nl-skills .nl-backend-skill-item h3:after,
+.nl-skills .nl-tools-skill-item h3:after,
+.nl-skills .nl-infographics-skill-item h3:after {
   content: "  ";
 }
-#nl-cv .nl-skills .nl-frontend-skill-item h3:before, #nl-cv .nl-skills .nl-frontend-skill-item h3:after,
-#nl-cv .nl-skills .nl-backend-skill-item h3:before,
-#nl-cv .nl-skills .nl-backend-skill-item h3:after,
-#nl-cv .nl-skills .nl-tools-skill-item h3:before,
-#nl-cv .nl-skills .nl-tools-skill-item h3:after,
-#nl-cv .nl-skills .nl-infographics-skill-item h3:before,
-#nl-cv .nl-skills .nl-infographics-skill-item h3:after {
+.nl-skills .nl-frontend-skill-item h3:before, .nl-skills .nl-frontend-skill-item h3:after,
+.nl-skills .nl-backend-skill-item h3:before,
+.nl-skills .nl-backend-skill-item h3:after,
+.nl-skills .nl-tools-skill-item h3:before,
+.nl-skills .nl-tools-skill-item h3:after,
+.nl-skills .nl-infographics-skill-item h3:before,
+.nl-skills .nl-infographics-skill-item h3:after {
   font-weight: inherit;
 }
-#nl-cv .nl-skills .nl-frontend-skill-item:after,
-#nl-cv .nl-skills .nl-backend-skill-item:after,
-#nl-cv .nl-skills .nl-tools-skill-item:after,
-#nl-cv .nl-skills .nl-infographics-skill-item:after {
+.nl-skills .nl-frontend-skill-item:after,
+.nl-skills .nl-backend-skill-item:after,
+.nl-skills .nl-tools-skill-item:after,
+.nl-skills .nl-infographics-skill-item:after {
   content: "";
   z-index: 1;
   position: absolute;
@@ -528,28 +519,98 @@ body {
   left: 10px;
   right: 10px;
   border-radius: 50px 0 0px 0px;
-  background: linear-gradient(170deg, rgba(141, 207, 216, 0.05) 0%, rgba(141, 207, 216, 0.2) 50%, transparent 80%);
+  background: linear-gradient(170deg, rgba(184, 4, 160, 0.02) 0%, rgba(184, 4, 160, 0.05) 50%, transparent 80%);
   filter: blur(5px);
 }
 @media (max-width: 992px) {
-  #nl-cv .nl-skills .nl-infographics-skill-item .nl-details-list .nl-detail-item {
+  .nl-skills .nl-infographics-skill-item .nl-details-list .nl-detail-item {
     display: block;
     margin-right: 0;
   }
 }
 @media (max-width: 768px) {
-  #nl-cv .nl-skills {
+  .nl-skills {
     margin-bottom: 3em;
   }
-  #nl-cv .nl-skills .nl-frontend-skill-item .nl-details-list .nl-detail-item h4,
-#nl-cv .nl-skills .nl-backend-skill-item .nl-details-list .nl-detail-item h4 {
+  .nl-skills .nl-frontend-skill-item .nl-details-list .nl-detail-item h4,
+.nl-skills .nl-backend-skill-item .nl-details-list .nl-detail-item h4 {
     text-align: center;
   }
-  #nl-cv .nl-skills .nl-frontend-skill-item .nl-details-list .nl-detail-item .nl-subdetails-list .nl-subdetail-item,
-#nl-cv .nl-skills .nl-backend-skill-item .nl-details-list .nl-detail-item .nl-subdetails-list .nl-subdetail-item {
+  .nl-skills .nl-frontend-skill-item .nl-details-list .nl-detail-item .nl-subdetails-list .nl-subdetail-item,
+.nl-skills .nl-backend-skill-item .nl-details-list .nl-detail-item .nl-subdetails-list .nl-subdetail-item {
     text-align: center;
     list-style: none;
   }
+}
+
+.nl-volunteering {
+  margin: 0;
+}
+.nl-volunteering h2 {
+  text-align: left;
+  margin: 0 0 0.5em;
+  font-size: 1.8em;
+  color: #b804a0;
+  font-style: italic;
+}
+.nl-volunteering .nl-volunteering-item h3 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+.nl-volunteering .nl-volunteering-item .nl-details-list {
+  color: black;
+  font-size: 0.9em;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 15px;
+}
+
+.nl-extra-skills {
+  margin: 2em 0 0;
+}
+.nl-extra-skills h3 {
+  font-size: 1em;
+  font-weight: bold;
+  color: #b804a0;
+  margin: 0 0 5px;
+}
+.nl-extra-skills .nl-details-list {
+  padding: 0 0 0 10px;
+}
+.nl-extra-skills .nl-details-list .nl-detail-item {
+  font-size: 0.95em;
+  line-height: 1em;
+  margin: 0 0 0.6em;
+  position: relative;
+  color: black;
+}
+.nl-extra-skills .nl-details-list .nl-detail-item:before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  left: -10px;
+  top: 6px;
+  display: inline-block;
+  background: #b804a0;
+}
+.nl-extra-skills .nl-details-list .nl-detail-item .nl-subdetails-list {
+  padding: 5px 0 0 10px;
+}
+.nl-extra-skills .nl-details-list .nl-detail-item .nl-subdetails-list .nl-subdetail-item {
+  position: relative;
+  font-size: 0.9em;
+  margin: 0 0 2px;
+  font-style: italic;
+  olor: gray;
+}
+
+.nl-cv-type-web .nl-hobbies {
+  margin: -220px 0 0;
+}
+.nl-cv-type-web .nl-extra-skills {
+  margin: 100px 0 0;
 }
 
 /*# sourceMappingURL=main.css.map */

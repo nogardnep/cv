@@ -2,9 +2,9 @@
   <li class="nl-education-item">
     <div class="nl-date">{{item.endDate | date}}</div>
     <div class="row">
-      <div class="col-sm-9">
+      <div class="col-sm-6">
         <h3>{{item.name}}</h3>
-        <ul class="nl-details-list" v-if="item.details">
+        <ul class="nl-details-list" v-if="displayDetails && item.details">
           <li
             class="nl-detail-item"
             v-for="(detail, key) in item.details"
@@ -13,7 +13,7 @@
           ></li>
         </ul>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-6">
         <div class="nl-school" v-html="item.school"></div>
         <div class="nl-location" v-html="item.location" v-if="item.location"></div>
       </div>
@@ -24,7 +24,7 @@
 <script>
 export default {
   name: "EducationItem",
-  props: ["item"],
+  props: ["item", "displayDetails"],
   filters: {
     date: function(date) {
       return date.getFullYear();

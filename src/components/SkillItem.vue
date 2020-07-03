@@ -7,7 +7,7 @@
           <div
             :class="['col-md-' + ((systemName=='frontend' || systemName=='backend') ? '6': '12')]"
           >
-            <h4 v-html="detail.text"></h4>
+            <span class="nl-detail-item-text" v-html="detail.text"></span>
           </div>
           <div
             :class="['col-md-' + ((systemName=='frontend' || systemName=='backend') ? '6': '12')]"
@@ -15,7 +15,7 @@
           >
             <ul class="nl-subdetails-list" v-if="detail.details">
               <li class="nl-subdetail-item" v-for="(subdetail, key) in detail.details" :key="key">
-                <span v-html="subdetail.text"></span>
+                <span class="nl-subdetail-item-text" v-html="subdetail.text"></span>
               </li>
             </ul>
           </div>

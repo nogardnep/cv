@@ -1,28 +1,18 @@
-#nl-cv .nl-skills {
-  margin: 3em 0 0;
+.nl-skills {
+  margin: -20px 0 2em;
 
   h2 {
     text-align: center;
-    margin: 0 0 1em;
-    font-size: 2em;
+    font-size: 2.2em;
     color: rgba($special-color-3, 1);
     font-style: italic;
-    // filter: blur(1px);
-    //text-shadow: 5px 5px 5px rgba($special-color-3, 0.3);
-    //text-shadow: 2px 2px 2px rgba($special-color-3, 0.2), -1px -1px 2px transparent;
-    filter: blur(1px);
-    //text-shadow: 0px 3px 0px rgba($special-color-3, 0.3), 0px 14px 10px rgba(0, 0, 0, 0.15),
-      //0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
+    margin: 0 0 0.5em;
   }
 
   .nl-skill-item {
     line-height: 1.1em;
     margin: 0 0 1em;
-    //border-left: $special-color-2 solid 1px;
-    //padding: 0 0 0 1em;
-    // @include nl-panel($special-background-color-2);
     text-align: center;
-    //background: linear-gradient(135deg, rgba(248,80,50,1) 0%, rgba(231,56,39,0.05) 100%);
 
     h3 {
       font-size: 1.1em;
@@ -30,9 +20,7 @@
       margin: 0 0 0.5em;
       text-transform: uppercase;
       font-weight: bold;
-      color: $special-color-3;
-      //border-bottom: 1px solid $special-color-2;
-      //background: rgba($special-color-2, 0.3);
+      color: rgba($special-color-2, 0.8);
     }
 
     .nl-details-list {
@@ -43,18 +31,9 @@
         padding: 0;
         margin: 0 0 0.6em;
 
-        // &:before {
-        //   content: "\002B28";
-        //   position: absolute;
-        //   font-style: normal;
-        //   top: -2px;
-        //   left: 0;
-        // }
-
         h4 {
           font-size: 1em;
           margin: 0;
-          //color: rgba($special-color-2, 1);
         }
 
         .nl-subdetails-list {
@@ -64,17 +43,7 @@
           .nl-subdetail-item {
             font-style: italic;
             position: relative;
-            // padding: 0 0 0 1.5em;
             font-size: 0.8em;
-
-            // &:before {
-            //   //content: "\0025B4";
-            //   content: "—";
-            //   position: absolute;
-            //   font-style: normal;
-            //   //top: -2px;
-            //   left: 0;
-            // }
           }
         }
       }
@@ -163,7 +132,7 @@
       bottom: -5px;
       left: 10px;
       right: 10px;
-      @include nl-wave($special-background-color-3);
+      @include nl-wave($special-background-color);
     }
   }
 

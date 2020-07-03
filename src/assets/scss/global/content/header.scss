@@ -1,0 +1,203 @@
+.nl-page-header {
+  margin: 0;
+  // display: flex;
+  // flex-direction: column;
+
+  .nl-portrait-figure {
+    max-width: 200px;
+    margin: 0 auto;
+    //box-shadow: 10px 10px 10px rgba($special-color, 0.6);
+    //box-shadow: 5px 5px 3px rgba($special-color, 0.8);
+    //filter: drop-shadow(0 0 0.75rem $special-color-2);
+    //@include nl-postit($special-color-3);
+
+    // border: 20px solid rgba($special-color-2, 1);
+
+    // &:after {
+    //   content: "";
+    //   z-index: 1;
+    //   position: absolute;
+    //   top: -10px;
+    //   bottom: 30px;
+    //   left: 00px;
+    //   right: 15px;
+    //   transform: rotate(0deg);
+    //   @include nl-postit($header-color);
+    // }
+
+    img {
+      max-width: 100%;
+      max-height: 180px;
+      position: relative;
+      z-index: 2;
+      //box-shadow: 5px 5px 10px rgba($base-text-color, 0.2);
+      filter: saturate(0);
+      //transform: rotate(-2deg);
+
+      &:after {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        top: -5px;
+        bottom: -5px;
+        left: 10px;
+        right: 10px;
+        @include nl-wave($special-background-color);
+      }
+    }
+
+    &:after {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      top: -20px;
+      bottom: 0px;
+      left: -20px;
+      right: 25px;
+      @include nl-wave($special-background-color-3);
+    }
+  }
+
+  .nl-cv-title-container {
+    position: relative;
+
+    .nl-cv-title {
+      font-size: 2.2em;
+      margin: 0 0 0;
+      text-align: left;
+      //text-shadow: 10px 5px 10px rgba($special-color, 0.3);
+      //filter: blur(1px);
+      //backdrop-filter: blur(10px);
+      //text-shadow: 0px 0px 6px rgba($special-color, 0.3);
+      text-transform: uppercase;
+
+      .nl-insersion {
+          font-size: 0.6em;
+          display: block;
+          margin: 0;
+          padding: 0 5px;
+          line-height: 1.1em;
+          color: white;
+          background: rgba($special-color, 1);
+      }
+
+      .nl-main-title {
+      color: rgba($special-color, 1);
+          display: block;
+      }
+    }
+
+    // &:after {
+    //   content: "";
+    //   z-index: 1;
+    //   position: absolute;
+    //   top: -5px;
+    //   bottom: -5px;
+    //   left: 30px;
+    //   right: 10px;
+    //   @include nl-wave(grey);
+    // }
+  }
+
+  .nl-owner-name {
+    max-width: 250px;
+    position: relative;
+    //font-family: $special-font-family;
+    //font-weight: bold;
+    font-size: 2.2em;
+    line-height: 0.9em;
+    //max-width: 100px;
+    //text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 0.5em;
+    //background: rgba($special-color-2, 0.5);
+    color: rgba($base-text-color, 1);
+    filter: blur(0.5px);
+    //text-shadow: 0px 3px 0px rgba($base-text-color, 0.3);
+    // color: rgba($page-color, 1);
+    padding: 2px 0 0;
+    display: inline-block;
+    z-index: 2;
+    //background: rgba($special-color-3, 1);
+    //box-shadow: 5px 5px 10px rgba($special-color-2, 0.3)
+
+    // &:before {
+    //   content: "";
+    //   position: absolute;
+    //   left: 0;
+    //   right: 0;
+    //   top: 0;
+    //   bottom: 0;
+    //   background: inherit;
+    //   z-index: -1;
+    //   background: rgba($header-color, 0.8);
+    //   filter: blur(1px);
+    // }
+  }
+
+  .nl-civil-status {
+    font-size: 0.95em;
+    line-height: 1.3em;
+    color: $base-text-color;
+
+    address {
+      margin: 0 0 0.5em;
+      // text-transform: uppercase;
+
+      .nl-email a {
+        color: inherit;
+        font-weight: bold;
+        font-style: italic;
+      }
+    }
+
+    .nl-driving-licence {
+      margin: 0 0 0.5em;
+      text-transform: uppercase;
+    }
+
+    .nl-website {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 1.2em;
+
+      .nl-label {
+        color: rgba($special-color, 1);
+        letter-spacing: 1px;
+      }
+
+      .nl-link {
+        display: inline-block;
+        margin: 5px 0 0;
+        opacity: 1;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 1em;
+        text-decoration: underline;
+        color: $base-text-color;
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  @media (max-width: $medium-screen) {
+    .nl-cv-title {
+      transform: none;
+      margin: 2em 0 0;
+      text-align: center;
+    }
+
+    .nl-owner-name {
+      transform: none;
+      margin: 2em 0 0.5em;
+    }
+
+    .nl-civil-status {
+      .nl-website {
+        .nl-link {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

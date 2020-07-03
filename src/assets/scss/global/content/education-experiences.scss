@@ -1,28 +1,32 @@
-#nl-cv .nl-professional-experiences,
-#nl-cv .nl-education {
+.nl-professional-experiences,
+.nl-education {
   h2 {
-    @include nl-long-title($special-color);
-  }
+    font-size: 2.2em;
+    color: rgba($special-color-3, 1);
+    font-style: italic;
+    margin: 0 0 0.5em;
+    line-height: 0.9em;
+   }
 
   .nl-experience-list,
   .nl-education-list {
     padding: 0;
-    margin: 0 0 5em;
+    margin: 0 0 0;
 
     .nl-education-item,
     .nl-experience-item {
       position: relative;
-      margin: 0 0 1em;
+      margin: 0 0 10px;
       line-height: 1.1em;
-      color: $special-color-2;
+      color: rgba($base-text-color, 1);
       //filter: blur(5px);
 
       .nl-date {
         font-weight: lighter;
         font-size: 0.9em;
-        margin: 0 0 0.2em;
+        margin: 0 0 2px;
         color: $page-color;
-        background: $special-color-2;
+        background: rgba($special-color-3, 1);
         display: inline-block;
         padding: 0 1px;
 
@@ -54,14 +58,14 @@
       .nl-location,
       .nl-school,
       .nl-company {
-        color: $special-color-2;
+        color: rgba($base-text-color, 1);
         font-size: 0.9em;
         font-style: italic;
       }
 
       .nl-location {
         font-size: 0.8em;
-        margin: 0.5em 0 0;
+        margin: 0;
 
         &:before {
           content: "(";
@@ -76,7 +80,7 @@
 
   .nl-experience-list .nl-experience-item {
     h3 {
-      font-size: 1.2em;
+      font-size: 1em;
     }
   }
 
